@@ -820,7 +820,7 @@ class Panel:
         module = pcbnew.PCB_IO().FootprintLoad(KIKIT_LIB, "Fiducial")
         module.SetPosition(position)
         if(bottom):
-            module.Flip(position)
+            module.Flip(position, False)
         for pad in module.Pads():
             pad.SetSize(pcbnew.wxSize(copperDiameter, copperDiameter))
             pad.SetLocalSolderMaskMargin(int((openingDiameter - copperDiameter) / 2))
